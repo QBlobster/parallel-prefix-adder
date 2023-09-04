@@ -6,19 +6,32 @@
 This program is operated by HSPICE using [90nm PTM](http://rfic.eecs.berkeley.edu/~niknejad/ee242/pdf/90nm_bulk.pm) technology at 1V power supply. It employs a parallel-prefix circuit, achieving a minimal delay time of 0.1815ns with a power consumption of 0.9593mW.
 
 **32-bit Parallel-Prefix Adder**
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/Adder32.png)
+
+ <img src="https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/Adder32.png" width = "80%" height = "80%" alt="32-bit Parallel-Prefix Adder" align=center />
+
 **h0 and 1<sup>st</sup> recurrence stage**
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/h0_1st_rec.png)
+
+ <img src="https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/h0_1st_rec.png" width = "60%" height = "60%" alt="32-bit Parallel-Prefix Adder" align=center />
+
 **2<sup>nd</sup>-5<sup>th</sup> recurrence stage**
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/2nd_to_5th_rec.png)
+
+ <img src="https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/2nd_to_5th_rec.png" width = "60%" height = "60%" alt="32-bit Parallel-Prefix Adder" align=center />
+
 **Sum Block and 2-to-1 MUX**
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/sum_mux.png)
+
+ <img src="https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/sum_mux.png" width = "40%" height = "40%" alt="32-bit Parallel-Prefix Adder" align=center />
+
 **First Prefix-2 for Carry and Transmit(left), 2-to-1 Multiplexer(right)**
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/carry_transmit_and_mux.png)
+
+ <img src="https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/carry_transmit_and_mux.png" width = "60%" height = "60%" alt="32-bit Parallel-Prefix Adder" align=center />
+
 **Inverter and XNOR(XOR) Gate**
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/inv_and_xnor_xor.png)
+
+ <img src="https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/inv_and_xnor_xor.png" width = "60%" height = "60%" alt="32-bit Parallel-Prefix Adder" align=center />
+
 **NOR(OR) and NAND(AND) Gate**
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/nor_or_and_nand_and.png)
+
+ <img src="https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/nor_or_and_nand_and.png" width = "60%" height = "60%" alt="32-bit Parallel-Prefix Adder" align=center />
 
 I employed the Sparse-2 design to reduce the number of gates in the carry operation (ℎ<sub>i</sub>) for the 2-bit adder. The sum is selected by pseudo-carry-in to the group. I used a five-stage approach to construct the 32-bit adder architecture. Each stage is derived using [Ling’s transformation](https://ieeexplore.ieee.org/document/1377160), which utilizes the pseudo-carry signal with factor 𝑡<sub>i</sub> and combines the pseudo-carry (𝐻<sub>i:j</sub>) and transmit (𝑇<sub>i:j</sub>), allowing for parallel prefix computation.
 
