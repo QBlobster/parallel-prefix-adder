@@ -1,0 +1,10 @@
+$DATA1 SOURCE='PrimeSim HSPICE' VERSION='S-2021.09 linux64' PARAM_COUNT=0
+$OPTION MEASFORM=2
+.TITLE '**** adder ****'
+t1 =  2.075e-09
+t2 =  2.257e-09
+td =  1.815e-10
+power =  9.593e-04
+temper =   27.0000
+alter# = 1
+
