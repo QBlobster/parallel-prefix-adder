@@ -59,7 +59,7 @@ vcs -full64 ./tb/Adder32_tb.v Adder32.v -l ./log/comp.log -debug_access+all -o A
 hspice -i Adder32.sp -o ./lis/Adder32.lis
 ```
 
-The functinal waveform result will be saved in `./func/Adder32.fsdb`. The Spice-level waveform result will be stored in `./lis/Adder32.tr0`. You can use `wv` to view the waveform, and the detailed result can be found in `./lis/Adder32.mt0`.
+The functional waveform result will be saved in `./func/Adder32.fsdb`. The Spice-level waveform result will be stored in `./lis/Adder32.tr0`. You can use `wv` to view the waveform, and the detailed result can be found in `./lis/Adder32.mt0`.
 
 ```Shell
 cd lis
