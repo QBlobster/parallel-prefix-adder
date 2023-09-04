@@ -5,20 +5,20 @@
 
 This program is operated by HSPICE using [90nm PTM](http://rfic.eecs.berkeley.edu/~niknejad/ee242/pdf/90nm_bulk.pm) technology at 1V power supply. It employs a parallel-prefix circuit, achieving a minimal delay time of 0.1815ns with a power consumption of 0.9593mW.
 
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/Adder32.png)
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/h0_1st_rec.png)
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/2nd_to_5th_rec.png)
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/carry_transmit_and_mux.png)
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/inv_and_xnor_xor.png)
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/nor_or_and_nand_and.png)
+![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/Adder32.png)
+![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/h0_1st_rec.png)
+![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/2nd_to_5th_rec.png)
+![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/carry_transmit_and_mux.png)
+![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/inv_and_xnor_xor.png)
+![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/nor_or_and_nand_and.png)
 
 I employed the Sparse-2 design to reduce the number of gates in the carry operation (ℎ<sub>i</sub>) for the 2-bit adder. The sum is selected by pseudo-carry-in to the group. I used a five-stage approach to construct the 32-bit adder architecture. Each stage is derived using [Ling’s transformation](https://ieeexplore.ieee.org/document/1377160), which utilizes the pseudo-carry signal with factor 𝑡<sub>i</sub> and combines the pseudo-carry (𝐻<sub>i:j</sub>) and transmit (𝑇<sub>i:j</sub>), allowing for parallel prefix computation.
 
 
 ## Demo
 
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/Demo1.png)
-![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/Demo2.png)
+![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/Demo1.png)
+![image](https://github.com/QBlobster/parallel-prefix-adder/blob/main/image/Demo2.png)
 
 Demo made by [Zhe-Wei Pan](https://github.com/QBlobster)
 ## Installation
@@ -59,7 +59,7 @@ vcs -full64 ./tb/Adder32_tb.v Adder32.v -l ./log/comp.log -debug_access+all -o A
 hspice -i Adder32.sp -o ./lis/Adder32.lis
 ```
 
-The functional waveform result will be saved in `./func/Adder32.fsdb`. The Spice-level waveform result will be stored in `./lis/Adder32.tr0`. You can use `wv` to view the waveform, and the detailed result can be found in `./lis/Adder32.mt0`.
+The functinal waveform result will be saved in `./func/Adder32.fsdb`. The Spice-level waveform result will be stored in `./lis/Adder32.tr0`. You can use `wv` to view the waveform, and the detailed result can be found in `./lis/Adder32.mt0`.
 
 ```Shell
 cd lis
